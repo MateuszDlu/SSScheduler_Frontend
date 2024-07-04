@@ -1,20 +1,37 @@
 import React from "react";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import SSS_Logo from "../../images/SSSLogo_full_vector.svg"
 
-
-interface NavigationProps{
-    logoutFunction: () => void;
+interface NavigationProps {
+  logoutFunction: () => void;
 }
 
-const NavBar: FC<NavigationProps> = ({logoutFunction}) => {
-    const navigate = useNavigate();
-    return(
-        <nav>
-            <div className="navContainer">
-                <label content="navBar or smth"></label>
-            </div>
-        </nav>
-    )
-}
-export default NavBar
+const NavBar: FC<NavigationProps> = ({ logoutFunction }) => {
+  const navigate = useNavigate();
+
+  return (
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+      <Navbar.Brand href="#home">
+            <img
+              src={SSS_Logo}
+              height="40"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
+
+export default NavBar;
