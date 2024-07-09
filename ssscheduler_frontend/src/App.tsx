@@ -9,7 +9,7 @@ function App() {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    // handle logout
+    console.info("logout clicked")
   };
 
   return (

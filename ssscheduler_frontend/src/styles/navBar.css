@@ -1,0 +1,9 @@
+nav {
+  background-color: #A27B5C;
+  display: flex;
+  justify-content: center;
+}
+nav img {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}/*# sourceMappingURL=navBar.css.map */
