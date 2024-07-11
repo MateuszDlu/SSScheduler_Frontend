@@ -6,4 +6,15 @@ nav {
 nav img {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+nav .nav-buttonContainer .btn {
+  margin-left: 10px;
+}
+nav .nav-buttonContainer .nav-buttonContainer__button-language, nav .nav-buttonContainer .nav-buttonContainer__button-signin {
+  background-color: #3F4E4F;
+  color: #F7F3E9;
+}
+nav .nav-buttonContainer .nav-buttonContainer__button-login {
+  background-color: #62D32C;
+  color: #2C3639;
 }/*# sourceMappingURL=navBar.css.map */
