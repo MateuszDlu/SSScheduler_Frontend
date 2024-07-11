@@ -1,0 +1,24 @@
+@import "colors";
+nav{
+    
+    background-color: $accentColor;
+    img{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    display: flex;
+    justify-content:center;
+    .nav-buttonContainer{
+        .btn{
+            margin-left: 10px;
+        }
+        .nav-buttonContainer__button-language, .nav-buttonContainer__button-signin{
+            background-color: $lightBackgroundColor;
+            color: $whiteTextColor;
+        }
+        .nav-buttonContainer__button-login{
+            background-color: $successColor;
+            color: $backgroundColor;
+        }
+    }
+}

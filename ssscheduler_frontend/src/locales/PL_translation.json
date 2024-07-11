@@ -1,4 +1,9 @@
 {
+    "navbar":{
+        "login": "Logowanie",
+        "signin": "Rejestracja"
+    },
+
     "homePage":{
         "headTitle": "SSScheduler - Strona główna"
     }
