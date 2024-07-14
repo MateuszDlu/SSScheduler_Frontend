@@ -1,4 +1,34 @@
 @import "colors";
-body{
-    background-color: $backgroundColor
+html{
+    background-color: $backgroundColor;
+}
+.promptContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensures the container takes full width */
+    .promptContainer__choice{
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        .orLabel{
+            margin: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 1.8;
+        }
+        .promptContainer__choice-signin{
+            background-color: $lightBackgroundColor;
+            color: $whiteTextColor;
+        }
+        .promptContainer__choice-login{
+            background-color: $successColor;
+            color: $backgroundColor;
+        }
+    }
 }

@@ -5,6 +5,11 @@
     },
 
     "homePage":{
-        "headTitle": "SSScheduler - Home page"
+        "headTitle": "SSScheduler - Home page",
+        "welcome_text": "Welcome to Super Simple Scheduler",
+        "welcome_text2": "to get started with the scheduling tool please",
+        "or": "or",
+        "alt_login": "Log in",
+        "alt_signin": "Sign in"
     }
 }
