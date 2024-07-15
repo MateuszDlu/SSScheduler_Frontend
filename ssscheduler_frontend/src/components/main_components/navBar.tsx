@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
@@ -19,6 +19,13 @@ const NavBar: FC<NavigationProps> = ({ logoutFunction }) => {
     i18n.changeLanguage(currentLanguage);
   }, [currentLanguage]);
 
+  const onLoginClick = useCallback(() => {
+    navigate("/login");
+  }, [navigate]);
+  const onSigninClick = useCallback(() => {
+    navigate("/signin");
+  }, [navigate]);
+
   return (
     <nav>
       <div className="navContainer container-fluid d-flex justify-content-between align-items-center">
@@ -33,8 +40,8 @@ const NavBar: FC<NavigationProps> = ({ logoutFunction }) => {
               <label>PL</label>
             }
           </button>
-          <button className="nav-buttonContainer__button-signin btn">{t('navbar.signin')}</button>
-          <button className="nav-buttonContainer__button-login btn">{t('navbar.login')}</button>
+          <button className="nav-buttonContainer__button-signin btn" onClick={onSigninClick}>{t('navbar.signin')}</button>
+          <button className="nav-buttonContainer__button-login btn" onClick={onLoginClick}>{t('navbar.login')}</button>
         </div>
       </div>
     </nav>

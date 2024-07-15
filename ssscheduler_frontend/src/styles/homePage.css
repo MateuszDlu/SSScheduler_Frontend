@@ -13,6 +13,9 @@ html {
   align-items: center;
   width: 100%; /* Ensures the container takes full width */
 }
+.promptContainer .promptContainer__WT1, .promptContainer .orLabel {
+  color: #F7F3E9;
+}
 .promptContainer .promptContainer__choice {
   margin-top: 5px;
   display: flex;
@@ -28,7 +31,17 @@ html {
   background-color: #3F4E4F;
   color: #F7F3E9;
 }
+.promptContainer .promptContainer__choice .promptContainer__choice-signin:hover {
+  background-color: #3F4E4F;
+  color: #F7F3E9;
+  opacity: 60%;
+}
 .promptContainer .promptContainer__choice .promptContainer__choice-login {
   background-color: #62D32C;
   color: #2C3639;
+}
+.promptContainer .promptContainer__choice .promptContainer__choice-login:hover {
+  background-color: #62D32C;
+  color: #2C3639;
+  opacity: 60%;
 }/*# sourceMappingURL=homePage.css.map */

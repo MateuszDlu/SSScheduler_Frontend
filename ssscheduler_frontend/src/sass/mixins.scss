@@ -1,0 +1,19 @@
+@mixin green-button{
+    background-color: $successColor;
+    color: $backgroundColor;
+}
+@mixin green-button-hover{
+    background-color: $successColor;
+    color: $backgroundColor;
+    opacity: 60%;
+}
+
+@mixin grey-button{
+    background-color: $lightBackgroundColor;
+    color: $whiteTextColor;
+}
+@mixin grey-button-hover{
+    background-color: $lightBackgroundColor;
+    color: $whiteTextColor;
+    opacity: 60%;
+}

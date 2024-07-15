@@ -11,5 +11,22 @@
         "or": "or",
         "alt_login": "Log in",
         "alt_signin": "Sign in"
+    },
+
+    "signinPage":{
+        "headTitle": "SSScheduler - Sign in",
+        "emailPrompt": "E-mail",
+        "passwordPrompt": "Password",
+        "confirmPasswordPrompt": "Confirm password",
+        "signinButton": "Register",
+        "prompt": "Sign in"
+    },
+
+    "loginPage":{
+        "headTitle": "SSScheduler - Log in",
+        "emailPrompt": "E-mail",
+        "passwordPrompt": "Password",
+        "loginButton": "Log in",
+        "prompt": "Log in"
     }
 }

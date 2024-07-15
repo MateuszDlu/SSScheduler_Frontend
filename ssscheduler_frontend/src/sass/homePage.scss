@@ -1,4 +1,6 @@
 @import "colors";
+@import "mixins";
+
 html{
     background-color: $backgroundColor;
 }
@@ -12,6 +14,9 @@ html{
     justify-content: center;
     align-items: center;
     width: 100%; /* Ensures the container takes full width */
+    .promptContainer__WT1, .orLabel{
+        color: $whiteTextColor;
+    }
     .promptContainer__choice{
         margin-top: 5px;
         display: flex;
@@ -23,12 +28,16 @@ html{
             line-height: 1.8;
         }
         .promptContainer__choice-signin{
-            background-color: $lightBackgroundColor;
-            color: $whiteTextColor;
+            @include grey-button
+        }
+        .promptContainer__choice-signin:hover{
+            @include grey-button-hover
         }
         .promptContainer__choice-login{
-            background-color: $successColor;
-            color: $backgroundColor;
+            @include green-button
+        }
+        .promptContainer__choice-login:hover{
+            @include green-button-hover
         }
     }
 }

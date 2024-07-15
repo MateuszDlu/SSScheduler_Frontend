@@ -1,4 +1,6 @@
 @import "colors";
+@import "mixins";
+
 nav{
     
     background-color: $accentColor;
@@ -13,12 +15,16 @@ nav{
             margin-left: 10px;
         }
         .nav-buttonContainer__button-language, .nav-buttonContainer__button-signin{
-            background-color: $lightBackgroundColor;
-            color: $whiteTextColor;
+            @include grey-button
+        }
+        .nav-buttonContainer__button-language:hover, .nav-buttonContainer__button-signin:hover{
+            @include grey-button-hover
         }
         .nav-buttonContainer__button-login{
-            background-color: $successColor;
-            color: $backgroundColor;
+            @include green-button
+        }
+        .nav-buttonContainer__button-login:hover{
+            @include green-button-hover
         }
     }
 }
