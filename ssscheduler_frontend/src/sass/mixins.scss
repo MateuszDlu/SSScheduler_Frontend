@@ -17,3 +17,13 @@
     color: $whiteTextColor;
     opacity: 60%;
 }
+
+@mixin warning-button{
+    background-color: $warningColor;
+    color: $backgroundColor;
+}
+@mixin warning-button-hover{
+    background-color: $warningColor;
+    color: $backgroundColor;
+    opacity: 60%;
+}

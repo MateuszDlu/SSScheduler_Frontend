@@ -26,5 +26,11 @@ nav{
         .nav-buttonContainer__button-login:hover{
             @include green-button-hover
         }
+        .nav-buttonContainer__button-logout{
+            @include warning-button
+        }
+        .nav-buttonContainer__button-logout:hover{
+            @include warning-button-hover
+        }
     }
 }

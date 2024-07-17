@@ -1,7 +1,8 @@
 {
     "navbar":{
         "login": "Log in",
-        "signin": "Sign in"
+        "signin": "Sign in",
+        "logout": "Log out"
     },
 
     "homePage":{

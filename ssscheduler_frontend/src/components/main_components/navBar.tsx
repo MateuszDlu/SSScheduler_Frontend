@@ -6,6 +6,8 @@ import SSS_Logo from "../../images/SSSLogo_full_vector.svg"
 import "../../styles/navBar.css"
 import i18n from "utilities/i18n";
 import { useTranslation } from "react-i18next";
+import UserModel from "objects/UserModel";
+import { getCurrentUser, isAuthenticated } from "utilities/AuthHelpers";
 
 interface NavigationProps {
   logoutFunction: () => void;
@@ -13,6 +15,7 @@ interface NavigationProps {
 
 const NavBar: FC<NavigationProps> = ({ logoutFunction }) => {
   const navigate = useNavigate();
+  const userFromLocalStorage: UserModel = getCurrentUser();
   const { t } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState<string>();
   useEffect(() => {
@@ -40,8 +43,17 @@ const NavBar: FC<NavigationProps> = ({ logoutFunction }) => {
               <label>PL</label>
             }
           </button>
-          <button className="nav-buttonContainer__button-signin btn" onClick={onSigninClick}>{t('navbar.signin')}</button>
-          <button className="nav-buttonContainer__button-login btn" onClick={onLoginClick}>{t('navbar.login')}</button>
+          {isAuthenticated() &&
+            <button className="nav-buttonContainer__button-logout btn" onClick={logoutFunction}>{t('navbar.logout')}</button>
+          }
+          {!isAuthenticated() &&
+            <button className="nav-buttonContainer__button-signin btn" onClick={onSigninClick}>{t('navbar.signin')}</button>
+          }
+          {!isAuthenticated() &&
+            <button className="nav-buttonContainer__button-login btn" onClick={onLoginClick}>{t('navbar.login')}</button>
+          }
+          {/* <button className="nav-buttonContainer__button-signin btn" onClick={onSigninClick}>{t('navbar.signin')}</button>
+          <button className="nav-buttonContainer__button-login btn" onClick={onLoginClick}>{t('navbar.login')}</button> */}
         </div>
       </div>
     </nav>

@@ -1,7 +1,8 @@
 {
     "navbar":{
         "login": "Logowanie",
-        "signin": "Rejestracja"
+        "signin": "Rejestracja",
+        "logout": "Wyloguj"
     },
 
     "homePage":{
