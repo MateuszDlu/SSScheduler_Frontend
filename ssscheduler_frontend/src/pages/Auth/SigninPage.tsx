@@ -49,7 +49,7 @@ const SigninPage: FunctionComponent<RegisterPageProps> = ({setUserFunction}) => 
                 console.log('success')
                 setUserFunction(JSON.stringify(response.data));
                 setIsLoading(false);
-                navigate("/");
+                navigate("/scheduler");
             }
         } catch (exception: unknown) {
             console.log('failure')

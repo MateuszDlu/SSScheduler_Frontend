@@ -28,6 +28,8 @@
         "emailPrompt": "E-mail",
         "passwordPrompt": "Password",
         "loginButton": "Log in",
-        "prompt": "Log in"
+        "prompt": "Log in",
+        "loginWait": "Wait...",
+        "registerPrompt": "No account yet?"
     }
 }

@@ -36,4 +36,12 @@
         margin-bottom: 30px;
         color: $whiteTextColor;
     }
+    .loginContainer__registerPrompt{
+        margin-top: 10px;
+        color: $whiteTextColor;
+        .loginContainer__registerPrompt-href{
+            color: $warningColor;
+            text-decoration: none;
+        }
+    }
 }

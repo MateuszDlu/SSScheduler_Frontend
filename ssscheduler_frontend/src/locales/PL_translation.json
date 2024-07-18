@@ -28,6 +28,8 @@
         "emailPrompt": "E-mail",
         "passwordPrompt": "Hasło",
         "loginButton": "Zaloguj się",
-        "prompt": "Zaloguj się"
+        "prompt": "Zaloguj się",
+        "loginWait": "Czekaj...",
+        "registerPrompt": "Nie masz konta?"
     }
 }

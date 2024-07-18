@@ -28,12 +28,15 @@ const NavBar: FC<NavigationProps> = ({ logoutFunction }) => {
   const onSigninClick = useCallback(() => {
     navigate("/signin");
   }, [navigate]);
+  const onLogoClick = useCallback(() => {
+    navigate("/scheduler");
+  }, [navigate]);
 
   return (
     <nav>
       <div className="navContainer container-fluid d-flex justify-content-between align-items-center">
-        <div className="nav-logoContainer col">
-          <img src={SSS_Logo} alt="SSSLogo" height={50}/>
+        <div className="nav-logoContainer col" onClick={onLogoClick}>
+          <img className="nav-logoContainer-img" src={SSS_Logo} alt="SSSLogo" height={50}/>
         </div>
         <div className="nav-buttonContainer">
           <button className="nav-buttonContainer__button-language btn" onClick={() => setCurrentLanguage(currentLanguage === "en" ? "pl" : "en")}>

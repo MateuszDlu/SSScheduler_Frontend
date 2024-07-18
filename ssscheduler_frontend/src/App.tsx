@@ -9,6 +9,8 @@ import UserModel from 'objects/UserModel';
 import axios from "axios";
 import { LOCAL_HOST_API_URL } from 'utilities/AppConstants';
 import { getCurrentUser } from 'utilities/AuthHelpers';
+import SchedulerPage from 'pages/SchedulerPage';
+import ProtectedRoutes from 'utilities/ProtectedRoutes';
 
 function App() {
   const navigate = useNavigate();
@@ -40,8 +42,13 @@ function App() {
     <>
       <NavBar logoutFunction={handleLogout} />
       <Routes>
+
+        <Route element={<ProtectedRoutes/>}>
+          <Route path='/scheduler' element={<SchedulerPage/>}/>
+        </Route>
+
         <Route path='/' element={<HomePage />} />
-        <Route path='/login' element={<LoginPage />}/>
+        <Route path='/login' element={<LoginPage setUserFunction={handleLogin}/>}/>
         <Route path='/signin' element={<SigninPage setUserFunction={handleLogin}/>}/>
       </Routes>
     </>

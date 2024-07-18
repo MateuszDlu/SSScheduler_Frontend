@@ -7,6 +7,9 @@ nav img {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+nav .nav-logoContainer-img:hover {
+  cursor: pointer;
+}
 nav .nav-buttonContainer .btn {
   margin-left: 10px;
 }

@@ -33,4 +33,12 @@
 .loginContainer .loginContainer__loginPrompt {
   margin-bottom: 30px;
   color: #F7F3E9;
+}
+.loginContainer .loginContainer__registerPrompt {
+  margin-top: 10px;
+  color: #F7F3E9;
+}
+.loginContainer .loginContainer__registerPrompt .loginContainer__registerPrompt-href {
+  color: #F0A028;
+  text-decoration: none;
 }/*# sourceMappingURL=loginPage.css.map */

@@ -10,6 +10,9 @@ nav{
     }
     display: flex;
     justify-content:center;
+    .nav-logoContainer-img:hover{
+        cursor: pointer;
+    }
     .nav-buttonContainer{
         .btn{
             margin-left: 10px;
