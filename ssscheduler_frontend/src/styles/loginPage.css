@@ -1,0 +1,44 @@
+.loginContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ensures the container takes full width */
+}
+.loginContainer .loginContainer__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.loginContainer .loginContainer__form .loginContainer__formInput {
+  width: 60%;
+  max-width: 500px;
+  min-width: 300px;
+}
+.loginContainer .loginContainer__form .loginContainer__loginButton {
+  margin-top: 20px;
+  background-color: #62D32C;
+  color: #2C3639;
+}
+.loginContainer .loginContainer__form .loginContainer__loginButton:hover {
+  margin-top: 20px;
+  background-color: #62D32C;
+  color: #2C3639;
+  opacity: 60%;
+}
+.loginContainer .loginContainer__loginPrompt {
+  margin-bottom: 30px;
+  color: #F7F3E9;
+}
+.loginContainer .loginContainer__registerPrompt {
+  margin-top: 10px;
+  color: #F7F3E9;
+}
+.loginContainer .loginContainer__registerPrompt .loginContainer__registerPrompt-href {
+  color: #F0A028;
+  text-decoration: none;
+}/*# sourceMappingURL=loginPage.css.map */

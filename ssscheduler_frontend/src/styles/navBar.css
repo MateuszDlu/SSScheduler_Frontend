@@ -7,6 +7,9 @@ nav img {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+nav .nav-logoContainer-img:hover {
+  cursor: pointer;
+}
 nav .nav-buttonContainer .btn {
   margin-left: 10px;
 }
@@ -14,7 +17,26 @@ nav .nav-buttonContainer .nav-buttonContainer__button-language, nav .nav-buttonC
   background-color: #3F4E4F;
   color: #F7F3E9;
 }
+nav .nav-buttonContainer .nav-buttonContainer__button-language:hover, nav .nav-buttonContainer .nav-buttonContainer__button-signin:hover {
+  background-color: #3F4E4F;
+  color: #F7F3E9;
+  opacity: 60%;
+}
 nav .nav-buttonContainer .nav-buttonContainer__button-login {
   background-color: #62D32C;
   color: #2C3639;
+}
+nav .nav-buttonContainer .nav-buttonContainer__button-login:hover {
+  background-color: #62D32C;
+  color: #2C3639;
+  opacity: 60%;
+}
+nav .nav-buttonContainer .nav-buttonContainer__button-logout {
+  background-color: #F0A028;
+  color: #2C3639;
+}
+nav .nav-buttonContainer .nav-buttonContainer__button-logout:hover {
+  background-color: #F0A028;
+  color: #2C3639;
+  opacity: 60%;
 }/*# sourceMappingURL=navBar.css.map */

@@ -1,10 +1,35 @@
 {
     "navbar":{
         "login": "Log in",
-        "signin": "Sign in"
+        "signin": "Sign in",
+        "logout": "Log out"
     },
 
     "homePage":{
-        "headTitle": "SSScheduler - Home page"
+        "headTitle": "SSScheduler - Home page",
+        "welcome_text": "Welcome to Super Simple Scheduler",
+        "welcome_text2": "to get started with the scheduling tool please",
+        "or": "or",
+        "alt_login": "Log in",
+        "alt_signin": "Sign in"
+    },
+
+    "signinPage":{
+        "headTitle": "SSScheduler - Sign in",
+        "emailPrompt": "E-mail",
+        "passwordPrompt": "Password",
+        "confirmPasswordPrompt": "Confirm password",
+        "signinButton": "Register",
+        "prompt": "Sign in"
+    },
+
+    "loginPage":{
+        "headTitle": "SSScheduler - Log in",
+        "emailPrompt": "E-mail",
+        "passwordPrompt": "Password",
+        "loginButton": "Log in",
+        "prompt": "Log in",
+        "loginWait": "Wait...",
+        "registerPrompt": "No account yet?"
     }
 }

@@ -1,0 +1,36 @@
+.signinContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ensures the container takes full width */
+}
+.signinContainer .signinContainer__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.signinContainer .signinContainer__form .signinContainer__formInput {
+  width: 60%;
+  max-width: 500px;
+  min-width: 300px;
+}
+.signinContainer .signinContainer__form .signinContainer__signinButton {
+  margin-top: 20px;
+  background-color: #62D32C;
+  color: #2C3639;
+}
+.signinContainer .signinContainer__form .signinContainer__signinButton:hover {
+  margin-top: 20px;
+  background-color: #62D32C;
+  color: #2C3639;
+  opacity: 60%;
+}
+.signinContainer .signinContainer__signinPrompt {
+  margin-bottom: 30px;
+  color: #F7F3E9;
+}/*# sourceMappingURL=signinPage.css.map */

@@ -1,3 +1,47 @@
-body {
+html {
   background-color: #2C3639;
+}
+
+.promptContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensures the container takes full width */
+}
+.promptContainer .promptContainer__WT1, .promptContainer .orLabel {
+  color: #F7F3E9;
+}
+.promptContainer .promptContainer__choice {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.promptContainer .promptContainer__choice .orLabel {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 1.8;
+}
+.promptContainer .promptContainer__choice .promptContainer__choice-signin {
+  background-color: #3F4E4F;
+  color: #F7F3E9;
+}
+.promptContainer .promptContainer__choice .promptContainer__choice-signin:hover {
+  background-color: #3F4E4F;
+  color: #F7F3E9;
+  opacity: 60%;
+}
+.promptContainer .promptContainer__choice .promptContainer__choice-login {
+  background-color: #62D32C;
+  color: #2C3639;
+}
+.promptContainer .promptContainer__choice .promptContainer__choice-login:hover {
+  background-color: #62D32C;
+  color: #2C3639;
+  opacity: 60%;
 }/*# sourceMappingURL=homePage.css.map */

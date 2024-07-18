@@ -1,4 +1,43 @@
 @import "colors";
-body{
-    background-color: $backgroundColor
+@import "mixins";
+
+html{
+    background-color: $backgroundColor;
+}
+.promptContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensures the container takes full width */
+    .promptContainer__WT1, .orLabel{
+        color: $whiteTextColor;
+    }
+    .promptContainer__choice{
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        .orLabel{
+            margin: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 1.8;
+        }
+        .promptContainer__choice-signin{
+            @include grey-button
+        }
+        .promptContainer__choice-signin:hover{
+            @include grey-button-hover
+        }
+        .promptContainer__choice-login{
+            @include green-button
+        }
+        .promptContainer__choice-login:hover{
+            @include green-button-hover
+        }
+    }
 }
