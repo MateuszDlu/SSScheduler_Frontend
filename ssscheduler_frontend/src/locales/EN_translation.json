@@ -20,7 +20,9 @@
         "passwordPrompt": "Password",
         "confirmPasswordPrompt": "Confirm password",
         "signinButton": "Register",
-        "prompt": "Sign in"
+        "prompt": "Sign in",
+        "emailNotUnique": "Email address already used",
+        "passwordsDontMatch": "Passwords don't match"
     },
 
     "loginPage":{
@@ -30,6 +32,8 @@
         "loginButton": "Log in",
         "prompt": "Log in",
         "loginWait": "Wait...",
-        "registerPrompt": "No account yet?"
-    }
+        "registerPrompt": "No account yet?",
+        "wrongCredentials": "Wrong email or password"
+    },
+    "somethingWentWrong": "Unpredicted error occured"
 }

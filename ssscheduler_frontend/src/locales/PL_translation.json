@@ -20,7 +20,9 @@
         "passwordPrompt": "Hasło",
         "confirmPasswordPrompt": "Potwierdź hasło",
         "signinButton": "Zarejestruj się",
-        "prompt": "Rejestracja"
+        "prompt": "Rejestracja",
+        "emailNotUnique": "Adres email jest już użyty",
+        "passwordsDontMatch": "Hasła nie są jednakowe"
     },
 
     "loginPage":{
@@ -30,6 +32,8 @@
         "loginButton": "Zaloguj się",
         "prompt": "Zaloguj się",
         "loginWait": "Czekaj...",
-        "registerPrompt": "Nie masz konta?"
-    }
+        "registerPrompt": "Nie masz konta?",
+        "wrongCredentials": "Zły email lub hasło"
+    },
+    "somethingWentWrong": "Napotkaliśmy niespodziewany problem"
 }

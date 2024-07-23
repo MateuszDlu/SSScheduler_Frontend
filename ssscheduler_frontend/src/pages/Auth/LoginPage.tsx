@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 import "../../styles/loginPage.css"
 import { FunctionComponent, useCallback, useState } from "react";
 import axios from "axios";
@@ -51,8 +51,12 @@ const LoginPage: FunctionComponent<LoginPageProps> = ({setUserFunction}) => {
             }
         } catch (exception) {
             setIsLoading(false);
-            setNotificationMessage(t('loginPage.wrongCredentials'));
-            console.error(exception)
+            if (axios.isAxiosError(exception)){
+                if(exception.response?.status === 401)
+                    setNotificationMessage('loginPage.wrongCredentials');
+            }else{
+                setNotificationMessage('somethingWentWrong');
+            }
         }
     }, [formData]);
 
@@ -71,6 +75,11 @@ const LoginPage: FunctionComponent<LoginPageProps> = ({setUserFunction}) => {
                 <title>{t('loginPage.headTitle')}</title>
             </head>
             <div className="loginContainer">
+                {notificationMessage && (
+                    <div className="alert alert-danger show" role="alert">
+                        {t(notificationMessage)}
+                    </div>
+                )}
                 <h4 className="loginContainer__loginPrompt">{t('loginPage.prompt')}</h4>
                 <form className="loginContainer__form form" onSubmit={onFormSubmit} method="post">
                     <div className="loginContainer__formInput form-floating mb-3">
