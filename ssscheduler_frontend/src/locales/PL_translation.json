@@ -35,5 +35,9 @@
         "registerPrompt": "Nie masz konta?",
         "wrongCredentials": "Zły email lub hasło"
     },
-    "somethingWentWrong": "Napotkaliśmy niespodziewany problem"
+    "somethingWentWrong": "Napotkaliśmy niespodziewany problem",
+
+    "scheduler":{
+        "headTitle":"SSScheduler"
+    }
 }

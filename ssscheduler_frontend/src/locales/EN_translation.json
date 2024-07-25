@@ -35,5 +35,9 @@
         "registerPrompt": "No account yet?",
         "wrongCredentials": "Wrong email or password"
     },
-    "somethingWentWrong": "Unpredicted error occured"
+    "somethingWentWrong": "Unpredicted error occured",
+
+    "scheduler":{
+        "headTitle":"SSScheduler"
+    }
 }

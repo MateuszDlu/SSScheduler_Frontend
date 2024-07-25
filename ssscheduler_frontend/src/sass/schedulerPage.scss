@@ -1,0 +1,54 @@
+@import "colors";
+@import "mixins";
+
+@import "colors";
+@import "mixins";
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.schedulerPage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.schedulerContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 20px;
+
+    .categoryContainer {
+        min-width: 200px; /* Minimum width for each column */
+        margin-left: 20px;
+        background-color: #f0f0f0;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    .categoryContainer h1 {
+        width: 100%;
+        margin: 0;
+        text-wrap: nowrap;
+    }
+}
+
+/* Ensuring the scrollbar doesn't overlap content */
+.schedulerContainer::-webkit-scrollbar {
+    height: 10px;
+}
+
+.schedulerContainer::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.schedulerContainer::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
