@@ -1,13 +1,11 @@
 @import "colors";
 @import "mixins";
 
-@import "colors";
-@import "mixins";
-
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: $backgroundColor;
 }
 
 .schedulerPage {
@@ -17,24 +15,56 @@ body {
 }
 
 .schedulerContainer {
+    background-color: $backgroundColor;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto; /* Enable horizontal scrolling */
-    padding: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    height: calc(100vh - 50px);
 
     .categoryContainer {
-        min-width: 200px; /* Minimum width for each column */
-        margin-left: 20px;
-        background-color: #f0f0f0;
-        padding: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: $lightBackgroundColor50;
+        display: inline-block;
+        vertical-align: top;
+        //min-width: fit-content; /* Minimum width for each column */
+        height: fit-content;
+        min-height: 80px;
+        max-height: calc(100vh - 90px); /* Adjust height to fit within the viewport minus padding */ //min-height: fit-content;
+        margin-left: 10px;
+        padding: 0px;
         border-radius: 8px;
+        overflow-y: auto; /* Enable vertical scrolling */
+        white-space: normal;
+        min-width: fit-content;
+        width: 200px;
     }
-    .categoryContainer h1 {
+    .categoryContainer h3 {
+        font-size: 20;
         width: 100%;
-        margin: 0;
-        text-wrap: nowrap;
+        text-align: center;
+        margin-bottom: 10px;
+        padding: 10px;
+        padding-top: 5px;
+        white-space: nowrap; //text-wrap: nowrap;
+        border-radius: 8px;
+        background-color: $accentColor;
+    }
+    .taskContainer{
+        border-radius: 8px;
+        background-color: $lightBackgroundColor;
+        padding: 10px;
+        padding-bottom: 2px;
+        margin-bottom: 10px;
+        display: block;
+        white-space: wrap;
+
+        .taskContainer h5{
+            white-space: normal;
+            text-wrap: wrap;
+            max-width: 100%;
+        }
     }
 }
 
@@ -49,6 +79,19 @@ body {
 }
 
 .schedulerContainer::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.categoryContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.categoryContainer::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+}
+
+.categoryContainer::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 

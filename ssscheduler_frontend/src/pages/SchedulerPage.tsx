@@ -20,11 +20,20 @@ const SchedulerPage = () => {
                 <title>{t('scheduler.headTitle')}</title>
             </head>
             <div className="schedulerContainer">
-                <div className="categoryContainer"><h1>Category 1</h1></div>
-                <div className="categoryContainer"><h1>Category 2</h1></div>
-                <div className="categoryContainer"><h1>Category 3</h1></div>
-                <div className="categoryContainer"><h1>Category 4</h1></div>
-                <div className="categoryContainer"><h1>Category 5</h1></div>
+                <div className="categoryContainer">
+                    <h3>Category 1</h3>
+                    <div className="taskContainer">
+                        <h4>task title</h4>
+                        <h5>description description description description description description description</h5>
+                        <h4>Deadline: 01.01.2100</h4>
+                    </div>
+                </div>
+                <div className="categoryContainer"><h3>Category 2</h3></div>
+                <div className="categoryContainer"><h3>Category 3</h3></div>
+                <div className="categoryContainer"><h3>Category 4</h3></div>
+                <div className="categoryContainer"><h3>Category 5</h3></div>
+                <div className="categoryContainer"><h3>Category 5</h3></div>
+                <div className="categoryContainer"><h3>Category 5</h3></div>
             </div>
         </body>
         </>
