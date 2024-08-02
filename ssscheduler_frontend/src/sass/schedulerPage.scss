@@ -16,6 +16,7 @@ body {
 
 .schedulerContainer {
     background-color: $backgroundColor;
+    color: $whiteTextColor;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -40,14 +41,13 @@ body {
         min-width: fit-content;
         width: 200px;
     }
-    .categoryContainer h3 {
-        font-size: 20;
+    .categoryContainer_name{
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
         padding: 10px;
         padding-top: 5px;
-        white-space: nowrap; //text-wrap: nowrap;
+        white-space: wrap; //text-wrap: nowrap;
         border-radius: 8px;
         background-color: $accentColor;
     }
@@ -59,11 +59,15 @@ body {
         margin-bottom: 10px;
         display: block;
         white-space: wrap;
+        max-width: 500px;
 
-        .taskContainer h5{
-            white-space: normal;
-            text-wrap: wrap;
+        .taskContainer_taskDescription{
+            font-weight: 400;
+            white-space: wrap;
             max-width: 100%;
+        }
+        .taskContainer_taskDeadline{
+            font-weight: 400;
         }
     }
 }

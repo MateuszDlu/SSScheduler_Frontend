@@ -13,6 +13,7 @@ body {
 
 .schedulerContainer {
   background-color: #2C3639;
+  color: #F7F3E9;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -36,14 +37,13 @@ body {
   min-width: fit-content;
   width: 200px;
 }
-.schedulerContainer .categoryContainer h3 {
-  font-size: 20;
+.schedulerContainer .categoryContainer_name {
   width: 100%;
   text-align: center;
   margin-bottom: 10px;
   padding: 10px;
   padding-top: 5px;
-  white-space: nowrap;
+  white-space: wrap;
   border-radius: 8px;
   background-color: #A27B5C;
 }
@@ -55,11 +55,15 @@ body {
   margin-bottom: 10px;
   display: block;
   white-space: wrap;
+  max-width: 500px;
 }
-.schedulerContainer .taskContainer .taskContainer h5 {
-  white-space: normal;
-  text-wrap: wrap;
+.schedulerContainer .taskContainer .taskContainer_taskDescription {
+  font-weight: 400;
+  white-space: wrap;
   max-width: 100%;
+}
+.schedulerContainer .taskContainer .taskContainer_taskDeadline {
+  font-weight: 400;
 }
 
 /* Ensuring the scrollbar doesn't overlap content */

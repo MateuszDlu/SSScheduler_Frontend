@@ -4,6 +4,7 @@ import { FunctionComponent, useCallback, useState } from "react";
 import axios from "axios";
 import { LOCAL_HOST_API_URL } from "utilities/AppConstants";
 import "../styles/schedulerPage.css"
+import CategoryModel from "objects/CategoryModel";
 
 
 const SchedulerPage = () => {
@@ -12,6 +13,9 @@ const SchedulerPage = () => {
     const [notificationMessage, setNotificationMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
+    let categories = Array<CategoryModel>
+
+    //retrive data at page load
 
     return(
         <>
@@ -21,19 +25,13 @@ const SchedulerPage = () => {
             </head>
             <div className="schedulerContainer">
                 <div className="categoryContainer">
-                    <h3>Category 1</h3>
+                    <h3 className="categoryContainer_name">Category 1</h3>
                     <div className="taskContainer">
-                        <h4>task title</h4>
-                        <h5>description description description description description description description</h5>
-                        <h4>Deadline: 01.01.2100</h4>
+                        <h4 className="taskContainer_taskTitle">task title task title task title</h4>
+                        <h5 className="taskContainer_taskDescription">description description description description description description description</h5>
+                        <h5 className="taskContainer_taskDeadline">Deadline: 01.01.2100</h5>
                     </div>
                 </div>
-                <div className="categoryContainer"><h3>Category 2</h3></div>
-                <div className="categoryContainer"><h3>Category 3</h3></div>
-                <div className="categoryContainer"><h3>Category 4</h3></div>
-                <div className="categoryContainer"><h3>Category 5</h3></div>
-                <div className="categoryContainer"><h3>Category 5</h3></div>
-                <div className="categoryContainer"><h3>Category 5</h3></div>
             </div>
         </body>
         </>
