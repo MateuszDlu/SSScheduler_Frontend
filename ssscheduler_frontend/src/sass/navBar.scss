@@ -3,7 +3,7 @@
 
 nav{
     
-    background-color: $accentColor;
+    background-color: $lightAccentColor;
     img{
         padding-top: 5px;
         padding-bottom: 5px;
@@ -30,10 +30,10 @@ nav{
             @include green-button-hover
         }
         .nav-buttonContainer__button-logout{
-            @include warning-button
+            @include logout-button
         }
         .nav-buttonContainer__button-logout:hover{
-            @include warning-button-hover
+            @include logout-button-hover
         }
     }
 }

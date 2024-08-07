@@ -25,7 +25,7 @@ body {
     padding-right: 20px;
     height: calc(100vh - 50px);
 
-    .categoryContainer {
+    .categoryContainer, .categoryContainer-addCategory{
         background-color: $lightBackgroundColor50;
         display: inline-block;
         vertical-align: top;
@@ -41,7 +41,16 @@ body {
         min-width: fit-content;
         width: 200px;
     }
-    .categoryContainer_name{
+    .categoryContainer-addCategory{
+        opacity: 80%;
+        outline: dashed;
+        outline-width: 1px;
+        outline-offset: -1px;
+        outline-color: $whiteTextColor;
+        min-height: fit-content;
+    }
+    
+    .categoryContainer_name, .categoryContainer_name-addCategory{
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
@@ -51,7 +60,12 @@ body {
         border-radius: 8px;
         background-color: $accentColor;
     }
-    .taskContainer{
+    .categoryContainer_name-addCategory{
+        background-color: $accentColor70;
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+    .taskContainer, .taskContainer-addTask{
         border-radius: 8px;
         background-color: $lightBackgroundColor;
         padding: 10px;
@@ -69,6 +83,14 @@ body {
         .taskContainer_taskDeadline{
             font-weight: 400;
         }
+    }
+    .taskContainer-addTask{
+        opacity: 80%;
+        outline: dashed;
+        outline-width: 1px;
+        outline-offset: -1px;
+        outline-color: $whiteTextColor;
+        min-height: fit-content;
     }
 }
 

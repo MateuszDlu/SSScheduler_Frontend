@@ -38,6 +38,9 @@
     "somethingWentWrong": "Napotkaliśmy niespodziewany problem",
 
     "scheduler":{
-        "headTitle":"SSScheduler"
+        "headTitle":"SSScheduler",
+        "deadline": "Termin",
+        "addTask": "Dodaj zadanie",
+        "addCategory": "Dodaj kategorię"
     }
 }

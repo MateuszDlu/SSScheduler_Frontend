@@ -45,7 +45,6 @@ const SchedulerPage = () => {
                     category.taskList = await fetchTasksForCategory(category.id);
                 }
                 setCategories(categoriesData);
-                console.log(categoriesData);
             }
         } catch (exception) {
             console.log(exception);
@@ -90,6 +89,19 @@ const SchedulerPage = () => {
         fetchCategoriesByUserId();
     }, [userId, token, fetchCategoriesByUserId]);
 
+
+    if (categories.length === 0){
+        return(<>
+            <body>
+                <head>
+                    <title>{t('scheduler.headTitle')}</title>
+                </head>
+                <h2>{t('scheduler.noCategories')}</h2>
+            </body>
+            </>
+        )
+    }
+
     return(
         <>
         <body>
@@ -97,13 +109,27 @@ const SchedulerPage = () => {
                 <title>{t('scheduler.headTitle')}</title>
             </head>
             <div className="schedulerContainer">
-                <div className="categoryContainer">
-                    <h3 className="categoryContainer_name">Category 1</h3>
-                    <div className="taskContainer">
-                        <h4 className="taskContainer_taskTitle">task title task title task title</h4>
-                        <h5 className="taskContainer_taskDescription">description description description description description description description</h5>
-                        <h5 className="taskContainer_taskDeadline">Deadline: 01.01.2100</h5>
+                {categories.map(category => (
+                    <div className="categoryContainer" key={category.id}>
+                        <h3 className="categoryContainer_name">{category.name}</h3>
+                        {category.taskList.length > 0 ? (
+                            category.taskList.map(task => (
+                                <div className="taskContainer" key={task.id}>
+                                    <h4 className="taskContainer_taskTitle">{task.title}</h4>
+                                    <h5 className="taskContainer_taskDescription">{task.description}</h5>
+                                    {task.deadline ? <h5 className="taskContainer_taskDeadline">
+                                        {t('scheduler.deadline')}: {task.deadline.toLocaleDateString()}
+                                    </h5> : null}
+                                </div>
+                            ))
+                        ) : null}
+                            <div className="taskContainer-addTask">
+                                <h4 className="taskContainer_taskTitle-addTask">{t('scheduler.addTask')}</h4>
+                            </div>
                     </div>
+                ))}
+                <div className="categoryContainer-addCategory">
+                    <h3 className="categoryContainer_name-addCategory">{t('scheduler.addCategory')}</h3>
                 </div>
             </div>
         </body>

@@ -22,7 +22,7 @@ body {
   padding-right: 20px;
   height: calc(100vh - 50px);
 }
-.schedulerContainer .categoryContainer {
+.schedulerContainer .categoryContainer, .schedulerContainer .categoryContainer-addCategory {
   background-color: rgba(63, 78, 79, 0.5019607843);
   display: inline-block;
   vertical-align: top;
@@ -37,7 +37,15 @@ body {
   min-width: fit-content;
   width: 200px;
 }
-.schedulerContainer .categoryContainer_name {
+.schedulerContainer .categoryContainer-addCategory {
+  opacity: 80%;
+  outline: dashed;
+  outline-width: 1px;
+  outline-offset: -1px;
+  outline-color: #F7F3E9;
+  min-height: fit-content;
+}
+.schedulerContainer .categoryContainer_name, .schedulerContainer .categoryContainer_name-addCategory {
   width: 100%;
   text-align: center;
   margin-bottom: 10px;
@@ -47,7 +55,12 @@ body {
   border-radius: 8px;
   background-color: #A27B5C;
 }
-.schedulerContainer .taskContainer {
+.schedulerContainer .categoryContainer_name-addCategory {
+  background-color: hsla(27, 28%, 50%, 0.7);
+  margin-bottom: 0;
+  font-weight: 500;
+}
+.schedulerContainer .taskContainer, .schedulerContainer .taskContainer-addTask {
   border-radius: 8px;
   background-color: #3F4E4F;
   padding: 10px;
@@ -57,13 +70,21 @@ body {
   white-space: wrap;
   max-width: 500px;
 }
-.schedulerContainer .taskContainer .taskContainer_taskDescription {
+.schedulerContainer .taskContainer .taskContainer_taskDescription, .schedulerContainer .taskContainer-addTask .taskContainer_taskDescription {
   font-weight: 400;
   white-space: wrap;
   max-width: 100%;
 }
-.schedulerContainer .taskContainer .taskContainer_taskDeadline {
+.schedulerContainer .taskContainer .taskContainer_taskDeadline, .schedulerContainer .taskContainer-addTask .taskContainer_taskDeadline {
   font-weight: 400;
+}
+.schedulerContainer .taskContainer-addTask {
+  opacity: 80%;
+  outline: dashed;
+  outline-width: 1px;
+  outline-offset: -1px;
+  outline-color: #F7F3E9;
+  min-height: fit-content;
 }
 
 /* Ensuring the scrollbar doesn't overlap content */

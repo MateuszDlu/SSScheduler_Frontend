@@ -38,6 +38,9 @@
     "somethingWentWrong": "Unpredicted error occured",
 
     "scheduler":{
-        "headTitle":"SSScheduler"
+        "headTitle": "SSScheduler",
+        "deadline": "Deadline",
+        "addTask": "Add task",
+        "addCategory": "Add category"
     }
 }

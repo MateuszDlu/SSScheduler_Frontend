@@ -18,6 +18,16 @@
     opacity: 60%;
 }
 
+@mixin logout-button{
+    background-color: $lightGray;
+    color: $backgroundColor;
+}
+@mixin logout-button-hover{
+    background-color: $lightGray;
+    color: $backgroundColor;
+    opacity: 60%;
+}
+
 @mixin warning-button{
     background-color: $warningColor;
     color: $backgroundColor;
