@@ -1,0 +1,22 @@
+@import "colors";
+@import "mixins";
+
+.addTaskContainer{
+    position: fixed;
+    inset: 0;
+    animation: fadeModal 0.5s;
+    background-color: rgba(0, 0, 0, 0.30);
+    backdrop-filter: blur(2px);
+}
+@keyframes fadeModal {
+    from {background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);}
+    to {background-color: rgba(0, 0, 0, 0.30);
+        backdrop-filter: blur(2px);}
+}
+.addTaskModal{
+    margin-top: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 5;
+}

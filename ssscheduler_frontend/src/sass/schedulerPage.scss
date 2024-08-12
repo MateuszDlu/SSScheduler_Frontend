@@ -40,6 +40,7 @@ body {
         white-space: normal;
         min-width: fit-content;
         width: 200px;
+        
     }
     .categoryContainer-addCategory{
         opacity: 80%;
@@ -59,6 +60,7 @@ body {
         white-space: wrap; //text-wrap: nowrap;
         border-radius: 8px;
         background-color: $accentColor;
+        cursor: pointer;
     }
     .categoryContainer_name-addCategory{
         background-color: $accentColor70;
@@ -74,6 +76,7 @@ body {
         display: block;
         white-space: wrap;
         max-width: 500px;
+        cursor: pointer;
 
         .taskContainer_taskDescription{
             font-weight: 400;

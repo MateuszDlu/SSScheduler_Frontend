@@ -1,11 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { json, useNavigate } from "react-router-dom";
-import { FunctionComponent, useCallback, useEffect, useState } from "react";
+import { FunctionComponent, MouseEventHandler, useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { LOCAL_HOST_API_URL } from "utilities/AppConstants";
 import "../styles/schedulerPage.css"
 import CategoryModel from "objects/CategoryModel";
 import TaskModel from "objects/TaskModel";
+import AddTaskModal from "components/other_components/AddTaskModal";
 
 
 const SchedulerPage = () => {
@@ -16,6 +17,8 @@ const SchedulerPage = () => {
     const [userId, setUserId] = useState<number | null>(null);
     const [token, setToken] = useState<string | null>(null);
     const [categories, setCategories] = useState<Array<CategoryModel>>([]);
+
+    const [isAddTaskModalVisible, setIsAddTaskModalVisible] = useState(false);
 
     const getUserInfoFromStorage = useCallback(() => {
         const userInfo = sessionStorage.getItem("user");
@@ -90,17 +93,13 @@ const SchedulerPage = () => {
     }, [userId, token, fetchCategoriesByUserId]);
 
 
-    if (categories.length === 0){
-        return(<>
-            <body>
-                <head>
-                    <title>{t('scheduler.headTitle')}</title>
-                </head>
-                <h2>{t('scheduler.noCategories')}</h2>
-            </body>
-            </>
-        )
-    }
+    const onAddTaskClicked = () => {
+        setIsAddTaskModalVisible(true); // Show the modal
+    };
+
+    const onAddCategoryClicked = () => {
+        console.log("add category clicked");
+    };
 
     return(
         <>
@@ -123,14 +122,15 @@ const SchedulerPage = () => {
                                 </div>
                             ))
                         ) : null}
-                            <div className="taskContainer-addTask">
+                            <div onClick={onAddTaskClicked} className="taskContainer-addTask">
                                 <h4 className="taskContainer_taskTitle-addTask">{t('scheduler.addTask')}</h4>
                             </div>
                     </div>
                 ))}
-                <div className="categoryContainer-addCategory">
+                <div onClick={onAddCategoryClicked} className="categoryContainer-addCategory">
                     <h3 className="categoryContainer_name-addCategory">{t('scheduler.addCategory')}</h3>
                 </div>
+                {isAddTaskModalVisible && <AddTaskModal categories={categories} />}
             </div>
         </body>
         </>

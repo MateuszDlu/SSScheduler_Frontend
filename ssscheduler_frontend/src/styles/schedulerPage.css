@@ -54,6 +54,7 @@ body {
   white-space: wrap;
   border-radius: 8px;
   background-color: #A27B5C;
+  cursor: pointer;
 }
 .schedulerContainer .categoryContainer_name-addCategory {
   background-color: hsla(27, 28%, 50%, 0.7);
@@ -69,6 +70,7 @@ body {
   display: block;
   white-space: wrap;
   max-width: 500px;
+  cursor: pointer;
 }
 .schedulerContainer .taskContainer .taskContainer_taskDescription, .schedulerContainer .taskContainer-addTask .taskContainer_taskDescription {
   font-weight: 400;
