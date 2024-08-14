@@ -53,6 +53,7 @@ body {
     
     .categoryContainer_name, .categoryContainer_name-addCategory{
         width: 100%;
+        font-size: 28px;
         text-align: center;
         margin-bottom: 10px;
         padding: 10px;
@@ -85,6 +86,9 @@ body {
         }
         .taskContainer_taskDeadline{
             font-weight: 400;
+        }
+        .taskContainer_taskTitle, .taskContainer_taskTitle-addTask{
+            font-size: 23px;
         }
     }
     .taskContainer-addTask{

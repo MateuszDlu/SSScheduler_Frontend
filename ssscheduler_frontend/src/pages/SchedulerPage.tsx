@@ -93,14 +93,6 @@ const SchedulerPage = () => {
     }, [userId, token, fetchCategoriesByUserId]);
 
 
-    const onAddTaskClicked = () => {
-        setIsAddTaskModalVisible(true); // Show the modal
-    };
-
-    const onAddCategoryClicked = () => {
-        console.log("add category clicked");
-    };
-
     return(
         <>
         <body>
@@ -122,15 +114,15 @@ const SchedulerPage = () => {
                                 </div>
                             ))
                         ) : null}
-                            <div onClick={onAddTaskClicked} className="taskContainer-addTask">
+                            <div onClick={() => setIsAddTaskModalVisible(true)} className="taskContainer-addTask">
                                 <h4 className="taskContainer_taskTitle-addTask">{t('scheduler.addTask')}</h4>
                             </div>
+                            {isAddTaskModalVisible && <AddTaskModal onClose={() => setIsAddTaskModalVisible(false)} categorieIdClicked={category.id} />}
                     </div>
                 ))}
-                <div onClick={onAddCategoryClicked} className="categoryContainer-addCategory">
+                <div className="categoryContainer-addCategory">
                     <h3 className="categoryContainer_name-addCategory">{t('scheduler.addCategory')}</h3>
                 </div>
-                {isAddTaskModalVisible && <AddTaskModal categories={categories} />}
             </div>
         </body>
         </>
