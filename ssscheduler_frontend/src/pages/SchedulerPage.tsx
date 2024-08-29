@@ -7,6 +7,7 @@ import "../styles/schedulerPage.css"
 import CategoryModel from "objects/CategoryModel";
 import TaskModel from "objects/TaskModel";
 import AddTaskModal from "components/other_components/AddTaskModal";
+import AddCategoryModal from "components/other_components/AddCategoryModal";
 
 
 const SchedulerPage = () => {
@@ -19,6 +20,7 @@ const SchedulerPage = () => {
     const [categories, setCategories] = useState<Array<CategoryModel>>([]);
 
     const [isAddTaskModalVisible, setIsAddTaskModalVisible] = useState(false);
+    const [isAddCategoryModalVisible, setIsAddCategoryModalVisible] = useState(false);
 
     const getUserInfoFromStorage = useCallback(() => {
         const userInfo = sessionStorage.getItem("user");
@@ -120,9 +122,10 @@ const SchedulerPage = () => {
                             {isAddTaskModalVisible && <AddTaskModal onClose={() => setIsAddTaskModalVisible(false)} categorieIdClicked={category.id} />}
                     </div>
                 ))}
-                <div className="categoryContainer-addCategory">
+                <div  onClick={() => setIsAddCategoryModalVisible(true)}  className="categoryContainer-addCategory">
                     <h3 className="categoryContainer_name-addCategory">{t('scheduler.addCategory')}</h3>
                 </div>
+                {isAddCategoryModalVisible && <AddCategoryModal onClose={() => setIsAddCategoryModalVisible(false)}/>}
             </div>
         </body>
         </>

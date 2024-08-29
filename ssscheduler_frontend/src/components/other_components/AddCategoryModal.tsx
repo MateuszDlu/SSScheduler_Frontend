@@ -3,12 +3,11 @@ import '../../styles/modalsStyling.css'
 import { X } from 'lucide-react'
 import CategoryModel from 'objects/CategoryModel';
 
-interface AddTaskModalProps {
-  categorieIdClicked: number;
+interface AddCategoryModalProps {
   onClose: () => void;
 }
 
-const AddTaskModal: React.FC<AddTaskModalProps> = ({ categorieIdClicked, onClose }) =>{
+const AddCategoryModal: React.FC<AddCategoryModalProps> = ({ onClose }) =>{
 
   const modalRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -21,16 +20,13 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ categorieIdClicked, onClose
   };
 
   const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-    deadline: new Date(),
-    categoryId: categorieIdClicked,
+    name: ""
   });
 
   function submitText(){
     if(isLoading)
       return "please wait"
-    return "add task"
+    return "add category"
   }
 
   const onFormSubmit = useCallback(async (e: React.FormEvent) => {
@@ -50,19 +46,11 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ categorieIdClicked, onClose
         <div className='addTaskModal'>
           <button className='closeModalIcon btn' onClick={onClose}><X size={30}/></button>
           <div className='addTaskModal__content'>
-            <h3 className='addTaskModal__content-prompt'>Add new task</h3>
+            <h3 className='addTaskModal__content-prompt'>Add new category</h3>
             <form className='addTaskModal__content-form form' onSubmit={onFormSubmit} method="post">
               <div className="addTaskModal__formInput form-floating mb-3">
-                <input type="text" className="form-control" id="title" name="title" placeholder="" onChange={onInputChange} required></input>
-                <label htmlFor="title">title</label>
-              </div>
-              <div className="addTaskModal__formInput form-floating mb-3">
-                <input type="text" className="form-control" id="description" name="description" placeholder="" onChange={onInputChange}></input>
-                <label htmlFor="description">description</label>
-              </div>
-              <div className="addTaskModal__formInput form-floating mb-3">
-                <input type="date" className="form-control" id="deadline" name="deadline" placeholder="" onChange={onInputChange}></input>
-                <label htmlFor="descdeadlineription">deadline</label>
+                <input type="text" className="form-control" id="name" name="name" placeholder="" onChange={onInputChange} required></input>
+                <label htmlFor="name">name</label>
               </div>
               <button type="submit" className="addTaskModal__submitButton btn" disabled={isLoading}>{submitText()}</button>
             </form>
@@ -72,4 +60,4 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ categorieIdClicked, onClose
   )
 }
 
-export default AddTaskModal
+export default AddCategoryModal
