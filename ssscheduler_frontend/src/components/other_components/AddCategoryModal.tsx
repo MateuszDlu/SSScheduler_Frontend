@@ -29,8 +29,8 @@ const AddCategoryModal: React.FC<AddCategoryModalProps> = ({ onClose }) =>{
 
   function submitText(){
     if(isLoading)
-      return "please wait"
-    return "add category"
+      return t('wait')
+    return t('addModal.addCategory')
   }
 
   const onFormSubmit = useCallback(async (e: React.FormEvent) => {
@@ -39,8 +39,10 @@ const AddCategoryModal: React.FC<AddCategoryModalProps> = ({ onClose }) =>{
             setIsLoading(true);
             axios.defaults.withCredentials = true;
             e.preventDefault();
+
             let formCategoryData: FormData = new FormData();
             formCategoryData.append('name', formData.name);
+
             let userInfo = sessionStorage.getItem("user")
             if(userInfo){
               formCategoryData.append('userId', JSON.parse(userInfo).user.id) 
@@ -64,8 +66,8 @@ const AddCategoryModal: React.FC<AddCategoryModalProps> = ({ onClose }) =>{
             setIsLoading(false);
             if(axios.isAxiosError(exception)){
                 if(exception.response?.status === 409)
-                    setNotificationMessage("addCategoryModal.categoryNameNotUnique")
-                else setNotificationMessage("addCategoryModal.unknownError")
+                    setNotificationMessage("addModal.categoryNameNotUnique")
+                else setNotificationMessage("addModal.unknownError")
             }else{
                 setNotificationMessage("somethingWentWrong")
             }
@@ -85,11 +87,11 @@ const AddCategoryModal: React.FC<AddCategoryModalProps> = ({ onClose }) =>{
       <div className='addTaskModal'>
         <button className='closeModalIcon btn' onClick={onClose}><X size={30}/></button>
         <div className='addTaskModal__content'>
-          <h3 className='addTaskModal__content-prompt'>Add new category</h3>
+          <h3 className='addTaskModal__content-prompt'>{t('addModal.AddNewCategory')}</h3>
           <form className='addTaskModal__content-form form' onSubmit={onFormSubmit} method="post">
             <div className="addTaskModal__formInput form-floating mb-3">
               <input type="text" className="form-control" id="name" name="name" placeholder="" onChange={onInputChange} required></input>
-              <label htmlFor="name">name</label>
+              <label htmlFor="name">{t('addModal.name')}</label>
             </div>
             {notificationMessage && (
               <label className="addTaskModal__notification">

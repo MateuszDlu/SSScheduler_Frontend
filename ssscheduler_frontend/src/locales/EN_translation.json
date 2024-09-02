@@ -42,5 +42,20 @@
         "deadline": "Deadline",
         "addTask": "Add task",
         "addCategory": "Add category"
+    },
+
+    "wait": "Wait...",
+    "addModal":{
+        "addCategory": "Add category",
+        "categoryNameNotUnique": "Category name must be unique",
+        "unknownError": "Unknown error",
+        "AddNewCategory": "Add new category",
+        "name": "Name",
+        "DeadlineMustBeInTheFuture": "Deadline must be in the future",
+        "addTask": "Add task",
+        "AddNewTask": "Add new task",
+        "title": "Title",
+        "description": "Description",
+        "deadline": "Deadline"
     }
 }

@@ -42,5 +42,20 @@
         "deadline": "Termin",
         "addTask": "Dodaj zadanie",
         "addCategory": "Dodaj kategorię"
+    },
+
+    "wait": "Czekaj...",
+    "addModal":{
+        "addCategory": "Dodaj kategorię",
+        "categoryNameNotUnique": "Nazwa kategorii musi być unikalna",
+        "unknownError": "Nieznany błąd",
+        "AddNewCategory": "Dodaj nową kategorię",
+        "name": "Nazwa",
+        "DeadlineMustBeInTheFuture": "Termin musi być w przyszłości",
+        "addTask": "Dodaj zadanie",
+        "AddNewTask": "Dodaj nowe zadanie",
+        "title": "Tytuł",
+        "description": "Opis",
+        "deadline": "Termin"
     }
 }
