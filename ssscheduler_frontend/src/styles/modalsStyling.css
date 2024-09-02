@@ -68,6 +68,11 @@
   color: #2C3639;
   opacity: 60%;
 }
+.addTaskModal .addTaskModal__content .addTaskModal__content-form .addTaskModal__notification {
+  color: #ff432b;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
 .addTaskModal .addTaskModal__content .addTaskModal__content-prompt {
   font-size: 30px;
 }/*# sourceMappingURL=modalsStyling.css.map */

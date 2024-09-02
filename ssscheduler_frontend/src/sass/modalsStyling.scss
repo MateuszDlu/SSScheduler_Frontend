@@ -66,6 +66,12 @@
             .addTaskModal__submitButton:hover{
                 @include green-button-hover;
             }
+
+            .addTaskModal__notification{
+                color: $dangerLabelColor;
+                margin-top: -8px;
+                margin-bottom: 10px;
+            }
         }
         .addTaskModal__content-prompt{
             font-size: 30px;

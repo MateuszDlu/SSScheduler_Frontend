@@ -19,7 +19,7 @@ const SchedulerPage = () => {
     const [token, setToken] = useState<string | null>(null);
     const [categories, setCategories] = useState<Array<CategoryModel>>([]);
 
-    const [isAddTaskModalVisible, setIsAddTaskModalVisible] = useState(false);
+    const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(null);
     const [isAddCategoryModalVisible, setIsAddCategoryModalVisible] = useState(false);
 
     const getUserInfoFromStorage = useCallback(() => {
@@ -85,6 +85,12 @@ const SchedulerPage = () => {
         return [];
     };
 
+    const handleClose = () => {
+        setSelectedCategoryId(null);
+        setIsAddCategoryModalVisible(false);
+        fetchCategoriesByUserId();
+    };
+
     //retrive data at page load
     useEffect(() => {
         getUserInfoFromStorage();
@@ -116,16 +122,18 @@ const SchedulerPage = () => {
                                 </div>
                             ))
                         ) : null}
-                            <div onClick={() => setIsAddTaskModalVisible(true)} className="taskContainer-addTask">
+                            <div onClick={() => setSelectedCategoryId(category.id)} className="taskContainer-addTask">
                                 <h4 className="taskContainer_taskTitle-addTask">{t('scheduler.addTask')}</h4>
                             </div>
-                            {isAddTaskModalVisible && <AddTaskModal onClose={() => setIsAddTaskModalVisible(false)} categorieIdClicked={category.id} />}
+                            {selectedCategoryId === category.id && (
+                                <AddTaskModal onClose={handleClose} categoryIdClicked={category.id} />
+                            )}
                     </div>
                 ))}
                 <div  onClick={() => setIsAddCategoryModalVisible(true)}  className="categoryContainer-addCategory">
                     <h3 className="categoryContainer_name-addCategory">{t('scheduler.addCategory')}</h3>
                 </div>
-                {isAddCategoryModalVisible && <AddCategoryModal onClose={() => setIsAddCategoryModalVisible(false)}/>}
+                {isAddCategoryModalVisible && <AddCategoryModal onClose={handleClose}/>}
             </div>
         </body>
         </>
