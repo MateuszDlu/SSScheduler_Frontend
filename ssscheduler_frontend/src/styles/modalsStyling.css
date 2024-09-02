@@ -1,0 +1,78 @@
+.addTaskContainer {
+  position: fixed;
+  inset: 0;
+  animation: fadeModal 0.3s;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeModal {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+  }
+}
+.addTaskModal {
+  margin-top: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 50%;
+  min-width: 300px;
+  max-width: 500px;
+}
+.addTaskModal .closeModalIcon {
+  place-self: end;
+  background: none;
+  outline: none;
+  color: #F7F3E9;
+}
+.addTaskModal .closeModalIcon::after {
+  outline: none;
+}
+.addTaskModal .addTaskModal__content {
+  background-color: rgba(63, 78, 79, 0.5019607843);
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  margin: 4px;
+}
+.addTaskModal .addTaskModal__content .addTaskModal__content-form {
+  width: 100%;
+  max-width: 500px;
+  color: #2C3639;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.addTaskModal .addTaskModal__content .addTaskModal__content-form .addTaskModal__formInput {
+  width: 100%;
+}
+.addTaskModal .addTaskModal__content .addTaskModal__content-form .addTaskModal__submitButton {
+  background-color: #62D32C;
+  color: #2C3639;
+}
+.addTaskModal .addTaskModal__content .addTaskModal__content-form .addTaskModal__submitButton:hover {
+  background-color: #62D32C;
+  color: #2C3639;
+  opacity: 60%;
+}
+.addTaskModal .addTaskModal__content .addTaskModal__content-form .addTaskModal__notification {
+  color: #ff432b;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+.addTaskModal .addTaskModal__content .addTaskModal__content-prompt {
+  font-size: 30px;
+}/*# sourceMappingURL=modalsStyling.css.map */

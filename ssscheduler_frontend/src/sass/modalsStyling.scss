@@ -1,0 +1,80 @@
+@import "colors";
+@import "mixins";
+
+.addTaskContainer{
+    position: fixed;
+    inset: 0;
+    animation: fadeModal 0.3s;
+    background-color: rgba(0, 0, 0, 0.30);
+    backdrop-filter: blur(2px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes fadeModal {
+    from {background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);}
+    to {background-color: rgba(0, 0, 0, 0.30);
+        backdrop-filter: blur(2px);}
+}
+.addTaskModal{
+    margin-top: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    //color: $whiteTextColor;
+    width: 50%;
+    min-width: 300px;
+    max-width: 500px;
+
+    .closeModalIcon{
+        place-self: end;
+        background: none;
+        outline: none;
+        color: $whiteTextColor;
+    }
+    .closeModalIcon::after{
+        outline: none;
+    }
+
+    .addTaskModal__content{
+        background-color: $lightBackgroundColor50;
+        border-radius: 5px;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        margin: 4px;
+
+        .addTaskModal__content-form{
+            width: 100%;
+            max-width: 500px;
+            color: $backgroundColor;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .addTaskModal__formInput{
+                width: 100%;
+            }
+
+            .addTaskModal__submitButton{
+                @include green-button;
+            }
+            .addTaskModal__submitButton:hover{
+                @include green-button-hover;
+            }
+
+            .addTaskModal__notification{
+                color: $dangerLabelColor;
+                margin-top: -8px;
+                margin-bottom: 10px;
+            }
+        }
+        .addTaskModal__content-prompt{
+            font-size: 30px;
+        }
+    }
+}

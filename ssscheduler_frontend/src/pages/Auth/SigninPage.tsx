@@ -51,21 +51,19 @@ const SigninPage: FunctionComponent<RegisterPageProps> = ({setUserFunction}) => 
                 setIsLoading(false);
                 navigate("/scheduler");
             }
-        } catch (exception: unknown) {
-            console.log('failure')
+        } catch (exception) {
             setIsLoading(false);
-            const ex = exception as AxiosError;
-            const errorResponse = ex.response?.data;
-            if (errorResponse !== undefined)
-                setNotificationMessage(JSON.stringify(errorResponse));
-            else
-                // @ts-ignore
-                setNotificationMessage(ex.response?.data[0].errorMessage);
+            if(axios.isAxiosError(exception)){
+                if(exception.response?.status === 409)
+                    setNotificationMessage("signinPage.emailNotUnique")
+                else if(exception.response?.status === 401)
+                    setNotificationMessage("signinPage.passwordsDontMatch")
+            }else{
+                setNotificationMessage("somethingWentWrong")
+            }
         }
     }, [formData]);
-
-//TODO VALIDATION
-
+    
     return(
         <>
         <body>
@@ -73,8 +71,12 @@ const SigninPage: FunctionComponent<RegisterPageProps> = ({setUserFunction}) => 
                 <title>{t('signinPage.headTitle')}</title>
             </head>
             <div className="signinContainer">
+                {notificationMessage && (
+                    <div className="alert alert-danger show" role="alert">
+                        {t(notificationMessage)}
+                    </div>
+                )}
                 <h4 className="signinContainer__signinPrompt">{t('signinPage.prompt')}</h4>
-                {/*notification?*/}
                 <form className="signinContainer__form form" onSubmit={onFormSubmit}>
                     <div className="signinContainer__formInput form-floating mb-3">
                         <input type="email" className="form-control" id="email" name="email" onChange={onInputChange} placeholder="" required></input>
